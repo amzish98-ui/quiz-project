@@ -8,7 +8,7 @@
     <title>QuizMaster Pro</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%234f6df5'/%3E%3Ctext x='50' y='68' font-size='55' font-family='sans-serif' font-weight='800' text-anchor='middle' fill='%23fff'%3EQ%3C/text%3E%3C/svg%3E" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20width='100'%20height='100'%20rx='20'%20fill='%234f6df5'/%3E%3Ctext%20x='50'%20y='68'%20font-size='55'%20font-family='sans-serif'%20font-weight='800'%20text-anchor='middle'%20fill='%23fff'%3EQ%3C/text%3E%3C/svg%3E" />
 
     <!-- Google Fonts: Syne (display) + DM Sans (body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -41,22 +41,22 @@
         <div class="steps-grid">
           <div class="step-card">
             <div class="step-num">01</div>
-            <h3>Pick a category</h3>
+            <h2>Pick a category</h2>
             <p>Choose from General Knowledge, Science, History, Geography, Sports, Entertainment, Computers and Mathematics — powered by the Open Trivia Database API.</p>
           </div>
           <div class="step-card">
             <div class="step-num">02</div>
-            <h3>Race the clock</h3>
+            <h2>Race the clock</h2>
             <p>Each question has a 20-second timer. Answer fast for bonus points — the quicker you answer, the more you score.</p>
           </div>
           <div class="step-card">
             <div class="step-num">03</div>
-            <h3>Instant feedback</h3>
+            <h2>Instant feedback</h2>
             <p>See right away if you're correct. At the end you get a full breakdown of every answer with explanations.</p>
           </div>
           <div class="step-card">
             <div class="step-num">04</div>
-            <h3>Beat the board</h3>
+            <h2>Beat the board</h2>
             <p>Your score is saved to the local leaderboard. Try different categories to top every table.</p>
           </div>
         </div>
@@ -141,10 +141,11 @@
       <div class="quiz-layout">
 
         <!-- LEFT: question + timer + answers -->
-        <main class="quiz-main">
+        <div class="quiz-main">
+          <h2 class="sr-only">Quiz question</h2>
 
           <div class="timer-row">
-            <div class="timer-ring-wrap" aria-label="Time remaining">
+            <div class="timer-ring-wrap" role="timer" aria-label="Time remaining">
               <svg class="timer-ring" viewBox="0 0 56 56">
                 <circle class="ring-bg" cx="28" cy="28" r="24" />
                 <circle class="ring-fill" id="ringFill" cx="28" cy="28" r="24" />
@@ -178,7 +179,7 @@
 
           <div class="feedback-bar" id="feedbackBar" role="status" aria-live="polite"></div>
 
-        </main>
+        </div>
 
         <!-- RIGHT: leaderboard -->
         <aside class="quiz-sidebar">
