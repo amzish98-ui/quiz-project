@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="QuizMaster Pro — a timed trivia quiz covering General Knowledge, Science, History, Geography, Sports, Entertainment, Computers and Mathematics, with live leaderboard." />
+    <meta name="theme-color" content="#1a1d27" id="themeColorMeta" />
+    <title>QuizMaster Pro</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%234f6df5'/%3E%3Ctext x='50' y='68' font-size='55' font-family='sans-serif' font-weight='800' text-anchor='middle' fill='%23fff'%3EQ%3C/text%3E%3C/svg%3E" />
+
+    <!-- Google Fonts: Syne (display) + DM Sans (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+
+    <!-- ========== HOW TO PAGE ========== -->
+    <section id="how-to-page" class="page active">
+      <div class="howto-inner">
+
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+          <span class="theme-icon">☀️</span>
+        </button>
+
+        <div class="howto-badge">QUIZMASTER PRO</div>
+        <h1 class="howto-title">Think you've got<br /><em>what it takes?</em></h1>
+        <p class="howto-subtitle">
+          Answer 10 questions, race against the clock, and climb the leaderboard.
+        </p>
+
+        <!-- Steps -->
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <h3>Pick a category</h3>
+            <p>Choose from General Knowledge, Science, History, Geography, Sports, Entertainment, Computers and Mathematics — powered by the Open Trivia Database API.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <h3>Race the clock</h3>
+            <p>Each question has a 20-second timer. Answer fast for bonus points — the quicker you answer, the more you score.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <h3>Instant feedback</h3>
+            <p>See right away if you're correct. At the end you get a full breakdown of every answer with explanations.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">04</div>
+            <h3>Beat the board</h3>
+            <p>Your score is saved to the local leaderboard. Try different categories to top every table.</p>
+          </div>
+        </div>
+
+        <!-- Name + category form -->
+        <div class="setup-card">
+          <div class="setup-row">
+            <div class="field-group">
+              <label for="playerName">Your name</label>
+              <input
+                type="text"
+                id="playerName"
+                placeholder="Enter your name…"
+                maxlength="20"
+                autocomplete="off"
+              />
+            </div>
+            <div class="field-group">
+              <label for="categorySelect">Category</label>
+              <select id="categorySelect">
+                <option value="9">General Knowledge</option>
+                <option value="17">Science</option>
+                <option value="23">History</option>
+                <option value="22">Geography</option>
+                <option value="21">Sports</option>
+                <option value="11">Entertainment</option>
+                <option value="18">Computers</option>
+                <option value="19">Mathematics</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label for="difficultySelect">Difficulty</label>
+              <select id="difficultySelect">
+                <option value="">Any</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="button" class="cta-btn" id="startBtn">
+            Start Quiz <span class="arrow">→</span>
+          </button>
+
+          <p class="setup-error" id="setupError" role="alert"></p>
+        </div>
+
+      </div>
+
+      <footer class="site-footer">
+        <p>
+          Questions provided by <a href="https://opentdb.com" target="_blank" rel="noopener">Open Trivia DB</a> ·
+          Fonts by <a href="https://fonts.google.com" target="_blank" rel="noopener">Google Fonts</a> ·
+          Built by Amir Shahsavari
+        </p>
+      </footer>
+    </section>
+
+
+    <!-- ========== QUIZ PAGE ========== -->
+    <section id="quiz-page" class="page">
+
+      <!-- Top bar -->
+      <header class="quiz-header">
+        <div class="header-left">
+          <span class="logo-small">QM</span>
+          <span id="headerCategory" class="header-cat"></span>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <span class="progress-label" id="progressLabel">1 / 10</span>
+        </div>
+        <div class="header-right">
+          <button type="button" class="theme-toggle small" id="themeToggle2" aria-label="Toggle theme">☀️</button>
+        </div>
+      </header>
+
+      <!-- Two-column layout -->
+      <div class="quiz-layout">
+
+        <!-- LEFT: question + timer + answers -->
+        <main class="quiz-main">
+
+          <div class="timer-row">
+            <div class="timer-ring-wrap" aria-label="Time remaining">
+              <svg class="timer-ring" viewBox="0 0 56 56">
+                <circle class="ring-bg" cx="28" cy="28" r="24" />
+                <circle class="ring-fill" id="ringFill" cx="28" cy="28" r="24" />
+              </svg>
+              <span class="timer-num" id="timerNum">20</span>
+            </div>
+            <div class="q-meta">
+              <span class="q-type-badge" id="qTypeBadge">Multiple Choice</span>
+              <span class="q-diff-badge" id="qDiffBadge">Medium</span>
+            </div>
+          </div>
+
+          <div class="question-card" id="questionCard">
+            <p class="question-text" id="questionText">Loading question…</p>
+          </div>
+
+          <!-- Multiple choice / true-false answers -->
+          <div class="answers-grid" id="answersGrid"></div>
+
+          <!-- Fill-in-the-blank input (hidden by default) -->
+          <div class="fitb-wrap" id="fitbWrap" style="display:none;">
+            <input
+              type="text"
+              id="fitbInput"
+              class="fitb-input"
+              placeholder="Type your answer…"
+              autocomplete="off"
+            />
+            <button type="button" class="fitb-submit" id="fitbSubmit">Submit</button>
+          </div>
+
+          <div class="feedback-bar" id="feedbackBar" role="status" aria-live="polite"></div>
+
+        </main>
+
+        <!-- RIGHT: leaderboard -->
+        <aside class="quiz-sidebar">
+          <div class="sidebar-head">
+            <h2 class="sidebar-title">Leaderboard</h2>
+            <button type="button" class="lb-clear" id="clearLeaderboardBtn">Clear</button>
+          </div>
+          <ul class="leaderboard-list" id="leaderboardList">
+            <li class="lb-empty">No scores yet — be the first!</li>
+          </ul>
+
+          <div class="sidebar-divider"></div>
+
+          <h2 class="sidebar-title">This session</h2>
+          <div class="session-stats">
+            <div class="stat-pill">
+              <span class="stat-label">Score</span>
+              <span class="stat-val" id="liveScore">0</span>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-label">Correct</span>
+              <span class="stat-val" id="liveCorrect">0</span>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-label">Streak 🔥</span>
+              <span class="stat-val" id="liveStreak">0</span>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+
+    <!-- ========== RESULTS PAGE ========== -->
+    <section id="results-page" class="page">
+      <div class="results-inner">
+
+        <div class="result-header">
+          <div class="result-emoji" id="resultEmoji">🏆</div>
+          <h1 class="result-title" id="resultTitle">Amazing!</h1>
+          <p class="result-subtitle" id="resultSubtitle">You scored 9 out of 10</p>
+        </div>
+
+        <div class="result-stats-row">
+          <div class="result-stat">
+            <span class="rs-val" id="rsFinalScore">0</span>
+            <span class="rs-label">Points</span>
+          </div>
+          <div class="result-stat">
+            <span class="rs-val" id="rsCorrect">0/10</span>
+            <span class="rs-label">Correct</span>
+          </div>
+          <div class="result-stat">
+            <span class="rs-val" id="rsAccuracy">0%</span>
+            <span class="rs-label">Accuracy</span>
+          </div>
+          <div class="result-stat">
+            <span class="rs-val" id="rsBestStreak">0</span>
+            <span class="rs-label">Best Streak</span>
+          </div>
+        </div>
+
+        <!-- Per-question review -->
+        <div class="review-section">
+          <h2 class="review-heading">Answer Review</h2>
+          <div class="review-list" id="reviewList"></div>
+        </div>
+
+        <div class="result-actions">
+          <button type="button" class="cta-btn" id="playAgainBtn">Play Again</button>
+          <button type="button" class="cta-btn secondary" id="homeBtn">Change Category</button>
+        </div>
+
+      </div>
+
+      <footer class="site-footer">
+        <p>
+          Questions provided by <a href="https://opentdb.com" target="_blank" rel="noopener">Open Trivia DB</a> ·
+          Fonts by <a href="https://fonts.google.com" target="_blank" rel="noopener">Google Fonts</a> ·
+          Built by Amir Shahsavari
+        </p>
+      </footer>
+    </section>
+
+
+    <!-- Loading overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+      <div class="loading-spinner"></div>
+      <p>Fetching questions…</p>
+    </div>
+
+    <script src="assets/js/quiz.js"></script>
+  </body>
+</html>
