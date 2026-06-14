@@ -107,13 +107,20 @@ All other HTML, CSS, and JavaScript was written from scratch for this project.
 
 Live demo: https://amzish98-ui.github.io/quiz-project/
 
-| Page | What it shows | Value to the user |
-|------|---------------|--------------------|
-| **How-To** | Welcome hero, 4-step "how it works" guide, and the setup form (name, category, difficulty) | Sets expectations and lets players personalise the quiz before they start |
-| **Quiz** | Question card, 20-second countdown ring, answer grid/fill-in-the-blank input, live score/streak sidebar and leaderboard | Keeps the player informed of time pressure, progress and ranking in real time |
-| **Results** | Final score, accuracy, best streak, and a full per-question answer review | Gives instant, actionable feedback so players can learn from mistakes |
+### How-To page
+![How-To page](assets/img/howto.svg)
 
-*(Screenshots of each page can be added here — e.g. `assets/img/howto.png`, `assets/img/quiz.png`, `assets/img/results.png` — by visiting the [live demo](https://amzish98-ui.github.io/quiz-project/), taking a screenshot of each page, and embedding with `![How-To page](assets/img/howto.png)`.)*
+Welcome hero, 4-step "how it works" guide, and the setup form (name, category, difficulty). Sets expectations and lets players personalise the quiz before they start.
+
+### Quiz page
+![Quiz page](assets/img/quiz.svg)
+
+Question card, 20-second countdown ring, answer grid, live score/streak sidebar and leaderboard. Keeps the player informed of time pressure, progress and ranking in real time.
+
+### Results page
+![Results page](assets/img/results.svg)
+
+Final score, accuracy, best streak, and a full per-question answer review. Gives instant, actionable feedback so players can learn from mistakes.
 
 ## Author
 

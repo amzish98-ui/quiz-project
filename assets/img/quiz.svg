@@ -1,0 +1,91 @@
+<svg viewBox="0 0 1512 798" xmlns="http://www.w3.org/2000/svg" font-family="'Syne','DM Sans',sans-serif">
+  <rect width="1512" height="798" fill="#0f1117"/>
+
+  <!-- header bar -->
+  <rect x="0" y="0" width="1512" height="70" fill="#1a1d27"/>
+  <rect x="40" y="22" width="38" height="26" rx="6" fill="#4f6df5"/>
+  <text x="59" y="40" fill="#0f1117" font-size="13" font-weight="800" text-anchor="middle">QM</text>
+  <text x="92" y="40" fill="#9398ab" font-size="14" font-weight="600" font-family="'DM Sans',sans-serif">General Knowledge</text>
+
+  <!-- progress bar -->
+  <rect x="616" y="32" width="280" height="6" rx="3" fill="#232734"/>
+  <rect x="616" y="32" width="84" height="6" rx="3" fill="#4f6df5"/>
+  <text x="920" y="40" fill="#9398ab" font-size="13" font-family="'DM Sans',sans-serif">3 / 10</text>
+
+  <!-- theme toggle -->
+  <circle cx="1462" cy="35" r="16" fill="#232734"/>
+  <text x="1462" y="40" font-size="14" text-anchor="middle">☀️</text>
+
+  <!-- ===== MAIN COLUMN ===== -->
+  <!-- timer ring -->
+  <circle cx="105" cy="160" r="46" fill="none" stroke="#232734" stroke-width="6"/>
+  <circle cx="105" cy="160" r="46" fill="none" stroke="#4f6df5" stroke-width="6" stroke-dasharray="216 289" stroke-linecap="round" transform="rotate(-90 105 160)"/>
+  <text x="105" y="168" fill="#f1f2f6" font-size="24" font-weight="800" text-anchor="middle">14</text>
+
+  <!-- badges -->
+  <rect x="172" y="135" width="130" height="28" rx="14" fill="#232734"/>
+  <text x="237" y="154" fill="#f1f2f6" font-size="12" font-weight="600" font-family="'DM Sans',sans-serif" text-anchor="middle">Multiple Choice</text>
+  <rect x="312" y="135" width="80" height="28" rx="14" fill="#232734"/>
+  <text x="352" y="154" fill="#f1f2f6" font-size="12" font-weight="600" font-family="'DM Sans',sans-serif" text-anchor="middle">Medium</text>
+
+  <!-- question card -->
+  <rect x="40" y="210" width="940" height="110" rx="12" fill="#1a1d27"/>
+  <text x="64" y="255" fill="#f1f2f6" font-size="20" font-weight="700" font-family="'DM Sans',sans-serif">Which planet in our solar system is known as</text>
+  <text x="64" y="285" fill="#f1f2f6" font-size="20" font-weight="700" font-family="'DM Sans',sans-serif">the &quot;Red Planet&quot;?</text>
+
+  <!-- answers grid 2x2 -->
+  <g font-family="'DM Sans',sans-serif" font-size="16" font-weight="600">
+    <rect x="40" y="346" width="458" height="64" rx="10" fill="#1a1d27" stroke="#4f6df5" stroke-width="2"/>
+    <text x="64" y="384" fill="#f1f2f6">Mars</text>
+
+    <rect x="522" y="346" width="458" height="64" rx="10" fill="#1a1d27"/>
+    <text x="546" y="384" fill="#f1f2f6">Venus</text>
+
+    <rect x="40" y="426" width="458" height="64" rx="10" fill="#1a1d27"/>
+    <text x="64" y="464" fill="#f1f2f6">Jupiter</text>
+
+    <rect x="522" y="426" width="458" height="64" rx="10" fill="#1a1d27"/>
+    <text x="546" y="464" fill="#f1f2f6">Saturn</text>
+  </g>
+
+  <!-- feedback bar -->
+  <rect x="40" y="514" width="940" height="46" rx="10" fill="#1d3a2a"/>
+  <text x="510" y="543" fill="#5fdc8f" font-size="14" font-weight="700" font-family="'DM Sans',sans-serif" text-anchor="middle">✓ Correct! Mars is known as the Red Planet.</text>
+
+  <!-- ===== SIDEBAR ===== -->
+  <rect x="1010" y="100" width="462" height="600" rx="14" fill="#1a1d27"/>
+
+  <text x="1034" y="142" fill="#f1f2f6" font-size="20" font-weight="800">Leaderboard</text>
+  <rect x="1390" y="122" width="58" height="28" rx="14" fill="#232734"/>
+  <text x="1419" y="141" fill="#9398ab" font-size="12" font-family="'DM Sans',sans-serif" text-anchor="middle">Clear</text>
+
+  <g font-family="'DM Sans',sans-serif" font-size="14">
+    <rect x="1034" y="166" width="414" height="46" rx="8" fill="#232734"/>
+    <text x="1054" y="194" fill="#f1f2f6" font-weight="700">1. Amir</text>
+    <text x="1422" y="194" fill="#4f6df5" font-weight="800" text-anchor="end">1840</text>
+
+    <rect x="1034" y="220" width="414" height="46" rx="8" fill="#1a1d27"/>
+    <text x="1054" y="248" fill="#f1f2f6" font-weight="600">2. Sam</text>
+    <text x="1422" y="248" fill="#9398ab" font-weight="700" text-anchor="end">1620</text>
+
+    <rect x="1034" y="274" width="414" height="46" rx="8" fill="#1a1d27"/>
+    <text x="1054" y="302" fill="#f1f2f6" font-weight="600">3. Jordan</text>
+    <text x="1422" y="302" fill="#9398ab" font-weight="700" text-anchor="end">1455</text>
+  </g>
+
+  <line x1="1034" y1="346" x2="1448" y2="346" stroke="#232734" stroke-width="1"/>
+
+  <text x="1034" y="388" fill="#f1f2f6" font-size="20" font-weight="800">This session</text>
+
+  <g font-family="'DM Sans',sans-serif">
+    <rect x="1034" y="412" width="414" height="60" rx="10" fill="#232734"/>
+    <text x="1054" y="436" fill="#9398ab" font-size="12">Score</text>
+    <text x="1054" y="462" fill="#f1f2f6" font-size="22" font-weight="800">540</text>
+
+    <text x="1054" y="436" fill="#9398ab" font-size="12" transform="translate(150,0)">Correct</text>
+    <text x="1054" y="462" fill="#f1f2f6" font-size="22" font-weight="800" transform="translate(150,0)">3</text>
+
+    <text x="1054" y="436" fill="#9398ab" font-size="12" transform="translate(290,0)">Streak 🔥</text>
+    <text x="1054" y="462" fill="#f1f2f6" font-size="22" font-weight="800" transform="translate(290,0)">3</text>
+  </g>
+</svg>

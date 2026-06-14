@@ -1,0 +1,57 @@
+<svg viewBox="0 0 1512 798" xmlns="http://www.w3.org/2000/svg" font-family="'Syne','DM Sans',sans-serif">
+  <rect width="1512" height="798" fill="#0f1117"/>
+
+  <!-- header -->
+  <text x="756" y="100" font-size="56" text-anchor="middle">🏆</text>
+  <text x="756" y="165" fill="#f1f2f6" font-size="44" font-weight="800" text-anchor="middle">Amazing!</text>
+  <text x="756" y="198" fill="#9398ab" font-size="17" font-family="'DM Sans',sans-serif" text-anchor="middle">You scored 9 out of 10</text>
+
+  <!-- stats row -->
+  <g font-family="'DM Sans',sans-serif" text-anchor="middle">
+    <rect x="406" y="234" width="160" height="100" rx="12" fill="#1a1d27"/>
+    <text x="486" y="288" fill="#4f6df5" font-size="32" font-weight="800" font-family="'Syne',sans-serif">1840</text>
+    <text x="486" y="316" fill="#9398ab" font-size="13">Points</text>
+
+    <rect x="586" y="234" width="160" height="100" rx="12" fill="#1a1d27"/>
+    <text x="666" y="288" fill="#f1f2f6" font-size="32" font-weight="800" font-family="'Syne',sans-serif">9/10</text>
+    <text x="666" y="316" fill="#9398ab" font-size="13">Correct</text>
+
+    <rect x="766" y="234" width="160" height="100" rx="12" fill="#1a1d27"/>
+    <text x="846" y="288" fill="#f1f2f6" font-size="32" font-weight="800" font-family="'Syne',sans-serif">90%</text>
+    <text x="846" y="316" fill="#9398ab" font-size="13">Accuracy</text>
+
+    <rect x="946" y="234" width="160" height="100" rx="12" fill="#1a1d27"/>
+    <text x="1026" y="288" fill="#f1f2f6" font-size="32" font-weight="800" font-family="'Syne',sans-serif">6</text>
+    <text x="1026" y="316" fill="#9398ab" font-size="13">Best Streak</text>
+  </g>
+
+  <!-- answer review -->
+  <text x="406" y="380" fill="#f1f2f6" font-size="22" font-weight="800">Answer Review</text>
+
+  <g font-family="'DM Sans',sans-serif" font-size="14">
+    <rect x="406" y="400" width="700" height="56" rx="10" fill="#1a1d27"/>
+    <text x="426" y="424" fill="#f1f2f6" font-weight="600">1. Which planet is known as the "Red Planet"?</text>
+    <text x="426" y="444" fill="#9398ab" font-size="12">Correct answer: Mars</text>
+    <circle cx="1070" cy="428" r="12" fill="#1d3a2a"/>
+    <text x="1070" y="433" fill="#5fdc8f" font-size="14" text-anchor="middle" font-weight="800">✓</text>
+
+    <rect x="406" y="464" width="700" height="56" rx="10" fill="#1a1d27"/>
+    <text x="426" y="488" fill="#f1f2f6" font-weight="600">2. What is the capital of France?</text>
+    <text x="426" y="508" fill="#9398ab" font-size="12">Correct answer: Paris</text>
+    <circle cx="1070" cy="492" r="12" fill="#1d3a2a"/>
+    <text x="1070" y="497" fill="#5fdc8f" font-size="14" text-anchor="middle" font-weight="800">✓</text>
+
+    <rect x="406" y="528" width="700" height="56" rx="10" fill="#1a1d27"/>
+    <text x="426" y="552" fill="#f1f2f6" font-weight="600">3. HTML stands for HyperText Markup Language.</text>
+    <text x="426" y="572" fill="#9398ab" font-size="12">Your answer: False · Correct answer: True</text>
+    <circle cx="1070" cy="556" r="12" fill="#3a1d24"/>
+    <text x="1070" y="561" fill="#f97373" font-size="14" text-anchor="middle" font-weight="800">✕</text>
+  </g>
+
+  <!-- action buttons -->
+  <rect x="556" y="630" width="180" height="48" rx="24" fill="#4f6df5"/>
+  <text x="646" y="660" fill="#0f1117" font-size="15" font-weight="700" font-family="'Syne',sans-serif" text-anchor="middle">Play Again</text>
+
+  <rect x="756" y="630" width="200" height="48" rx="24" fill="#232734"/>
+  <text x="856" y="660" fill="#f1f2f6" font-size="15" font-weight="700" font-family="'Syne',sans-serif" text-anchor="middle">Change Category</text>
+</svg>
