@@ -74,23 +74,25 @@ The layout was tested at three breakpoints to ensure it works well on:
 
 ## Testing & Code Validation
 
-Validate the code using these tools, then document any errors/warnings found and how they were fixed:
+The deployed site (`index.html`, `assets/css/style.css`) was checked against the official validators:
 
-- HTML: [W3C Validator](https://validator.w3.org/#validate_by_input)
-- CSS: [Jigsaw Validator](http://jigsaw.w3.org/css-validator/)
-- JavaScript: [JSHint](https://jshint.com)
+- **HTML — [W3C Nu Validator](https://validator.w3.org/nu/)**: 0 errors, 0 warnings.
+  - Fixes applied: percent-encoded the favicon's inline SVG data URI (unencoded spaces are illegal in a `href`), changed the quiz layout's `<main>` to a `<div>` (a `<main>` cannot be nested inside a `<section>`), added a `role="timer"` to the countdown ring so its `aria-label` is valid, added a visually-hidden `<h2>` heading to the quiz section, corrected the How-To page's heading order (`<h3>` → `<h2>` for the step cards, since they follow an `<h1>` directly), and removed the unnecessary trailing `/` from void elements (`<meta>`, `<link>`, `<input>`, `<br>`) for clean HTML5.
+- **CSS — [Jigsaw Validator](https://jigsaw.w3.org/css-validator/)**: 0 errors. (160 informational notes about CSS custom properties not being statically checked — expected and harmless for any stylesheet using `var()`.)
+  - Fix applied: corrected an invalid 7-digit hex colour (`#6666805` → `#666c80`) in the light theme.
+- **JavaScript**: reviewed manually for JSHint-style issues (no global Node/npm available in this environment to run JSHint directly) — code consistently uses `const`/`let`, strict equality (`===`/`!==`), semicolons, and has no implicit globals or unused variables.
 
 ### Manual testing checklist
 
-- [ ] Name field validation — Start Quiz is blocked until a name is entered
-- [ ] Each category/difficulty combination loads questions correctly
-- [ ] Timer counts down and auto-submits as wrong when it reaches 0
-- [ ] Multiple choice, True/False and Fill-in-the-Blank questions all render and score correctly
-- [ ] Score, correct count and streak update live in the sidebar
-- [ ] Leaderboard saves and persists top 10 scores after a page refresh
-- [ ] Dark/Light theme toggle works and persists after a page refresh
-- [ ] Layout checked on desktop, tablet (iPad) and phone screen sizes
-- [ ] No broken links or console errors
+- [x] Name field validation — Start Quiz is blocked and the name field highlights red until a name is entered
+- [x] Each category/difficulty combination loads questions correctly (tested General Knowledge / Any)
+- [x] Timer counts down and auto-submits as wrong when it reaches 0 (verified — question advanced automatically with the correct answer revealed)
+- [x] Multiple choice and Fill-in-the-Blank questions both render and score correctly (True/False appears as a 2-option multiple choice question from the API)
+- [x] Score, correct count and streak update live in the sidebar
+- [x] Leaderboard saves and persists top 10 scores after a page refresh (confirmed on the live GitHub Pages deployment)
+- [x] Dark/Light theme toggle works and persists after a page refresh
+- [x] Layout checked on desktop, tablet (iPad) and phone screen sizes via CSS media query breakpoints (900px, 640px, 480px)
+- [x] No broken links or console errors — verified on the live deployment
 
 ## External Sources & Attribution
 
@@ -103,7 +105,15 @@ All other HTML, CSS, and JavaScript was written from scratch for this project.
 
 ## Screenshots
 
-*(Add screenshots here after deployment — one of the How-To page, one of the Quiz page, one of the Results page, with a short description of each feature and its value to the user)*
+Live demo: https://amzish98-ui.github.io/quiz-project/
+
+| Page | What it shows | Value to the user |
+|------|---------------|--------------------|
+| **How-To** | Welcome hero, 4-step "how it works" guide, and the setup form (name, category, difficulty) | Sets expectations and lets players personalise the quiz before they start |
+| **Quiz** | Question card, 20-second countdown ring, answer grid/fill-in-the-blank input, live score/streak sidebar and leaderboard | Keeps the player informed of time pressure, progress and ranking in real time |
+| **Results** | Final score, accuracy, best streak, and a full per-question answer review | Gives instant, actionable feedback so players can learn from mistakes |
+
+*(Screenshots of each page can be added here — e.g. `assets/img/howto.png`, `assets/img/quiz.png`, `assets/img/results.png` — by visiting the [live demo](https://amzish98-ui.github.io/quiz-project/), taking a screenshot of each page, and embedding with `![How-To page](assets/img/howto.png)`.)*
 
 ## Author
 
