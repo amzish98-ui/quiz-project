@@ -681,6 +681,14 @@ select:focus-visible {
   border-color: var(--accent);
 }
 
+@keyframes fitb-pulse {
+  0%, 100% { border-color: var(--border); box-shadow: none; }
+  50% { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(79,109,245,0.25); }
+}
+.fitb-pulse {
+  animation: fitb-pulse 0.7s ease 3;
+}
+
 .fitb-submit {
   background: var(--accent);
   border: none;

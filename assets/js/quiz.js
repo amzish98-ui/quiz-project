@@ -463,7 +463,11 @@ function renderQuestion() {
     els.answersGrid.style.display = 'none';
     els.fitbWrap.style.display = 'flex';
     els.fitbInput.value = '';
-    els.fitbInput.focus();
+    els.fitbInput.focus(); // works on desktop; mobile keyboard requires a direct tap
+    // Pulse the border so mobile users know to tap the field
+    els.fitbInput.classList.remove('fitb-pulse');
+    void els.fitbInput.offsetWidth; // force reflow to restart animation
+    els.fitbInput.classList.add('fitb-pulse');
   } else {
     els.fitbWrap.style.display = 'none';
     els.answersGrid.style.display = 'grid';
