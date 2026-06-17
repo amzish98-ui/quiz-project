@@ -441,6 +441,9 @@ function renderQuestion() {
   const q = state.questions[state.currentIndex];
   state.answered = false;
 
+  // Reset scroll to top so mobile users see the new question from the beginning
+  window.scrollTo({ top: 0, behavior: 'instant' });
+
   // Progress bar
   const pct = (state.currentIndex / state.questions.length) * 100;
   els.progressFill.style.width = pct + '%';
